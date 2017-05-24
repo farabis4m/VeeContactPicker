@@ -12,7 +12,10 @@
 #import "VeeSearchResultsDelegate.h"
 @class VeeContactPickerOptions;
 @class VeeContactPickerStrings;
-
+typedef enum{
+    Insert = 0,
+    Remove
+}OperationType;
 @interface VeeContactPickerViewController : UIViewController <VeeABDelegate, VeeSearchResultsDelegate, UITableViewDelegate>
 
 #pragma mark - Init
@@ -32,9 +35,11 @@
 
 @property (nonatomic, strong) IBOutlet UITableView* contactsTableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem* cancelBarButtonItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *rightBarButtonItem;
 @property (weak, nonatomic) IBOutlet UINavigationItem *titleNavigationItem;
 @property (weak, nonatomic) IBOutlet UILabel *emptyViewLabel;
-
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *groupHederViewHeightConstraint;
+@property (strong, nonatomic) NSMutableArray *selectedContactsArray;
 #pragma mark - IBActions
 
 - (IBAction)cancelBarButtonItemPressed:(id)sender;

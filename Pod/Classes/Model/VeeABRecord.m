@@ -298,6 +298,7 @@ NSString* const kVeePostalAddressCountryKey = @"Country";
 - (NSString*)description
 {
     return @"";
+    
 }
 
 - (NSString*)debugDescription

@@ -127,6 +127,10 @@
 		BC7143B82E45DDE808B1D8E8F6970E41 /* OCMInvocationExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = E7BAF40D179955B6819A9864B89CC03D /* OCMInvocationExpectation.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C01520F21314A4A11E0BD5C9BE190A1A /* OCMExpectationRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = E2C600EC0D79AAC57119C32733E16476 /* OCMExpectationRecorder.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C11D7D634379188EAD10402E14688994 /* AGCObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8A572396F55E496847B3044E6A611F /* AGCObject.m */; };
+		C2EFAA691ED5AAAD00E1744A /* ContactPickerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C2EFAA671ED5AAAD00E1744A /* ContactPickerCell.h */; };
+		C2EFAA6A1ED5AAAD00E1744A /* ContactPickerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C2EFAA671ED5AAAD00E1744A /* ContactPickerCell.h */; };
+		C2EFAA6B1ED5AAAD00E1744A /* ContactPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EFAA681ED5AAAD00E1744A /* ContactPickerCell.m */; };
+		C2EFAA6C1ED5AAAD00E1744A /* ContactPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EFAA681ED5AAAD00E1744A /* ContactPickerCell.m */; };
 		C389E0223F8EEA143FA6575BC6FCFEB1 /* NSLayoutConstraint+FLKAutoLayoutDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = DC471859A5B0E289481324ECF6F7F5EC /* NSLayoutConstraint+FLKAutoLayoutDebug.m */; };
 		C4235F3704F471BAF74CB4482A99D340 /* OCMReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = A2557835640C27067E65FD0383B7260D /* OCMReturnValueProvider.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C508640C7607A5BE183916AC4202A026 /* OCMInvocationMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7363EB666A06F898301382F18132761D /* OCMInvocationMatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -404,6 +408,8 @@
 		BFAA0C8AB969038AE895FB833FD239F9 /* Pods-VeeContactPicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VeeContactPicker_Tests-dummy.m"; sourceTree = "<group>"; };
 		C007ADD444B580ADB3C95728E99D3B49 /* OCMIndirectReturnValueProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMIndirectReturnValueProvider.m; path = Source/OCMock/OCMIndirectReturnValueProvider.m; sourceTree = "<group>"; };
 		C12973F8466CFBB121438E55ED99775B /* VeeCommons.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = VeeCommons.m; sourceTree = "<group>"; };
+		C2EFAA671ED5AAAD00E1744A /* ContactPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactPickerCell.h; sourceTree = "<group>"; };
+		C2EFAA681ED5AAAD00E1744A /* ContactPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactPickerCell.m; sourceTree = "<group>"; };
 		C748C6E66F6F677234E9BBF9A1FAC35E /* FLKAutoLayoutPredicateList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLKAutoLayoutPredicateList.h; path = FLKAutoLayout/Private/FLKAutoLayoutPredicateList.h; sourceTree = "<group>"; };
 		C89908061BAB4DDC40D6F2F4A1D02757 /* AGCObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGCObject.h; path = "NSObject-AGCDescription/Classes/AGCObject.h"; sourceTree = "<group>"; };
 		C900D4272736D6FC063816B4F897F2AD /* OCMObserverRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMObserverRecorder.m; path = Source/OCMock/OCMObserverRecorder.m; sourceTree = "<group>"; };
@@ -557,6 +563,8 @@
 		17E956114830981816C5571E20D3A472 /* UITableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				C2EFAA671ED5AAAD00E1744A /* ContactPickerCell.h */,
+				C2EFAA681ED5AAAD00E1744A /* ContactPickerCell.m */,
 				448AD6590604B09C0839B4E800248468 /* VeeContactCellConfiguration.h */,
 				9F26B372F371525E7B9B9BF68197A1B1 /* VeeContactCellConfiguration.m */,
 				0B32C3EC1FD9EEC9485CD59EDBA7C212 /* VeeContactUITableViewCell.h */,
@@ -1057,6 +1065,7 @@
 				46F3D9073A49A46E11896B47E3506308 /* NSObject+FLKAutoLayoutDebug.h in Headers */,
 				91D4268327BFFA7F87B6701126111344 /* UIView+FLKAutoLayout.h in Headers */,
 				0EFF617FB3B7722390581B4382E5DD28 /* UIView+FLKAutoLayoutDebug.h in Headers */,
+				C2EFAA691ED5AAAD00E1744A /* ContactPickerCell.h in Headers */,
 				0DF9AB1E4C5F08DEF14471A718569228 /* UIView+FLKAutoLayoutPredicate.h in Headers */,
 				2033A8B7260BE31D4C42E58524841091 /* UIViewController+FLKAutoLayout.h in Headers */,
 			);
@@ -1093,6 +1102,7 @@
 				6C8CDC3F7D55178CB63585D62714D5C8 /* VeeCommons.h in Headers */,
 				582B00F67CBF8BEA0A55BC7033ED1494 /* VeeContact.h in Headers */,
 				DD8A5ED7F3DC585CBF4C87C53A16E01F /* VeeContactCellConfiguration.h in Headers */,
+				C2EFAA6A1ED5AAAD00E1744A /* ContactPickerCell.h in Headers */,
 				3041D6972C8CED7EC4E67F50508E0800 /* VeeContactFactory.h in Headers */,
 				34E1601BAE8356AFD46D81BAD7C26F1C /* VeeContactFactoryProt.h in Headers */,
 				ED42E372E25010DCF5243F5C90432E3A /* VeeContactPickerAppearanceConstants.h in Headers */,
@@ -1327,6 +1337,7 @@
 				5EB7D7B7B81CDF7FBFF0D743117E9A2A /* VeeContactPickerViewController.m in Sources */,
 				044AED427DF6474AC4582F2466E94046 /* VeeContactProtFactoryProducer.m in Sources */,
 				082D917DB4036BF4273E7C310B0B8F13 /* VeeContactUITableViewCell.m in Sources */,
+				C2EFAA6C1ED5AAAD00E1744A /* ContactPickerCell.m in Sources */,
 				B9E61D766AF991D23344A22B8F1CD1A1 /* VeePostalAddress.m in Sources */,
 				5EE2FCF8979602654020E4491F14DD8C /* VeeSectionedArrayDataSource.m in Sources */,
 				287D332DAFE39E0D85746325F224AFF8 /* VeeTableViewSearchDelegate.m in Sources */,
@@ -1389,6 +1400,7 @@
 				1B8A4D0A4870037490F3FEC4E1CB9676 /* FLKAutoLayout-dummy.m in Sources */,
 				F11816ED4678B81EEF701D11B5725328 /* FLKAutoLayoutPredicateList.m in Sources */,
 				C389E0223F8EEA143FA6575BC6FCFEB1 /* NSLayoutConstraint+FLKAutoLayoutDebug.m in Sources */,
+				C2EFAA6B1ED5AAAD00E1744A /* ContactPickerCell.m in Sources */,
 				95222EEAB12A518FF1D6AD30040EF33E /* NSObject+FLKAutoLayoutDebug.m in Sources */,
 				EB95D653419EF79BF843C2C70B173F30 /* UIView+FLKAutoLayout.m in Sources */,
 				F2509B95DEA7AA63BC41F248842A561D /* UIView+FLKAutoLayoutDebug.m in Sources */,

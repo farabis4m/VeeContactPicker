@@ -24,7 +24,7 @@
 @property (nonatomic, copy) NSString* organizationName;
 @property (nonatomic, copy) NSString* compositeName; //The concatenated value of these properties: Prefix, Suffix, Organization, First name, and Last name.
 @property (nonatomic, strong) UIImage* thumbnailImage;
-
+@property (nonatomic, copy) NSString* phoneNumber;
 #pragma mark - Multivalue properties
 
 @property (nonatomic, strong) NSArray<NSString*>* phoneNumbers;

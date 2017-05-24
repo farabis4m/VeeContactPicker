@@ -16,7 +16,8 @@
 @property (nonatomic, readonly, copy) NSString* organizationName;
 @property (nonatomic, readonly, copy) NSString* compositeName;
 @property (nonatomic, readonly, strong) UIImage* thumbnailImage;
-@property (nonatomic, readonly, strong) NSArray<NSString*>* phoneNumbers;
+@property (nonatomic, copy) NSString* phoneNumber;
+@property (nonatomic, strong) NSArray<NSString*>* phoneNumbers;
 @property (nonatomic, readonly, strong) NSArray<NSString*>* emails;
 @property (nonatomic, readonly, strong) NSArray<NSDictionary*>* postalAddresses;
 @property (nonatomic, readonly, strong) NSArray<NSString*>* websites;

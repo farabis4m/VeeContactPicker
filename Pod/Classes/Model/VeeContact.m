@@ -21,6 +21,7 @@
         _nickname = [veeABRecord nickname];
         _organizationName = [veeABRecord organizationName];
         _thumbnailImage = [veeABRecord thumbnailImage];
+        _phoneNumber = [veeABRecord phoneNumber];
         _phoneNumbers = [veeABRecord phoneNumbers];
         _emails = [veeABRecord emails];
         _postalAddresses = [self postalAddressesFromVeeABRecord:veeABRecord];
