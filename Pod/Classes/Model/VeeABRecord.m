@@ -1,5 +1,4 @@
 #import "VeeABRecord.h"
-#import "NSObject+AGCDescription.h"
 
 @interface VeeABRecord ()
 
@@ -298,12 +297,12 @@ NSString* const kVeePostalAddressCountryKey = @"Country";
 
 - (NSString*)description
 {
-    return [self agc_description];
+    return @"";
 }
 
 - (NSString*)debugDescription
 {
-    return [self agc_debugDescription];
+    return @"";
 }
 
 @end

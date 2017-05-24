@@ -1,5 +1,4 @@
 #import "VeePostalAddress.h"
-#import "NSObject+AGCDescription.h"
 
 @implementation VeePostalAddress
 
@@ -62,12 +61,12 @@
 
 - (NSString*)description
 {
-    return [self agc_description];
+    return @"";
 }
 
 - (NSString*)debugDescription
 {
-    return [self agc_debugDescription];
+    return @"";
 }
 
 @end

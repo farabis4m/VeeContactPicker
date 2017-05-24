@@ -1,6 +1,5 @@
 #import "VeeContactPickerOptions.h"
 #import "VeeContactPickerStrings.h"
-#import "NSObject+AGCDescription.h"
 
 @implementation VeeContactPickerOptions
 
@@ -34,12 +33,12 @@
 
 - (NSString*)description
 {
-    return [self agc_description];
+    return @"";
 }
 
 - (NSString*)debugDescription
 {
-    return [self agc_debugDescription];
+    return @"";
 }
 
 @end
