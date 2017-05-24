@@ -330,7 +330,10 @@
 }
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
-    
+    if (_selectedContactsArray.count == 5) {
+        [_contactPickerDelegate contactsLimitExceeded:5];
+        return;
+    }
     _isRemovingFromHeader = NO;
     [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
     _selectedContactViewHeightConstraint.constant = 90;
@@ -494,6 +497,7 @@
 
 -(void)continueButtonTapped:(id)sender {
      [self dismissViewControllerAnimated:YES completion:nil];
+    
     [_contactPickerDelegate didSelectContacts:_selectedContactsArray];
    
 }

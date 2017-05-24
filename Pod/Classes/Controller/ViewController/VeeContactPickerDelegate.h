@@ -12,6 +12,7 @@
 
 - (void)didSelectContact:(id<VeeContactProt>)abContact;
 -(void)didSelectContacts:(NSArray<id<VeeContactProt>>*)selectedContacts;
+-(void)contactsLimitExceeded:(int)count;
 - (void)didCancelContactSelection;
 - (void)didFailToAccessAddressBook;
 
