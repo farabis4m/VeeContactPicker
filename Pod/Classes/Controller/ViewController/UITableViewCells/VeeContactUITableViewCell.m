@@ -18,40 +18,49 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-
+    
     if (!self) {
         return nil;
     }
     
-    self.backgroundColor = [[VeeContactPickerAppearanceConstants sharedInstance] veeContactCellBackgroundColor];
+    self.backgroundColor = [UIColor clearColor]; // [[VeeContactPickerAppearanceConstants sharedInstance] veeContactCellBackgroundColor];
     [self setCellSelectedBackgroundColor];
     
     [self addContactImageViewToSubView];
     [self addPrimaryLabelToSubView];
-    
+    [self addselctionCheckButtonToSubView];
     return self;
 }
 
 -(void)setCellSelectedBackgroundColor
 {
     UIView *selectedBackgroundView = [[UIView alloc] initWithFrame:self.bounds];
-    [selectedBackgroundView setBackgroundColor:[[VeeContactPickerAppearanceConstants sharedInstance] veeContactCellBackgroundColorWhenSelected]];
+    //[selectedBackgroundView setBackgroundColor:[[VeeContactPickerAppearanceConstants sharedInstance] veeContactCellBackgroundColorWhenSelected]];
+    [selectedBackgroundView setBackgroundColor:[UIColor clearColor]];
     self.selectedBackgroundView = selectedBackgroundView;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     //Avoid background color disappering when selecting cell, see http://stackoverflow.com/questions/5222736/uiview-backgroundcolor-disappears-when-uitableviewcell-is-selected
-
+    
     UIColor* backgroundColor = _contactImageView.backgroundColor;
     [super setSelected:selected animated:animated];
     _contactImageView.backgroundColor = backgroundColor;
+  
+    [super setSelected:selected animated:animated];
+    [self.backgroundView setBackgroundColor:[UIColor clearColor]];
+    if (selected) {
+        [_checkmarkImageView setBackgroundColor:[UIColor greenColor]];
+    }else{
+        [_checkmarkImageView setBackgroundColor:[UIColor clearColor]];
+    }
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
 {
     //Avoid background color disappering when selecting cell, see http://stackoverflow.com/questions/5222736/uiview-backgroundcolor-disappears-when-uitableviewcell-is-selected
-
+    
     UIColor* backgroundColor = _contactImageView.backgroundColor;
     [super setHighlighted:highlighted animated:animated];
     _contactImageView.backgroundColor = backgroundColor;
@@ -89,11 +98,22 @@
     [self setConstraintsForPrimaryLabel];
 }
 
+-(void)addselctionCheckButtonToSubView {
+    _checkmarkImageView = [UIImageView new];
+    [_checkmarkImageView setBackgroundColor:[UIColor clearColor]];
+    [self addSubview:_checkmarkImageView];
+    [self setConstraintsForCheckMarkImage];
+    [_checkmarkImageView.layer setCornerRadius:_checkmarkImageView.bounds.size.width/2];
+    _checkmarkImageView.layer.borderColor = [UIColor grayColor].CGColor;
+    _checkmarkImageView.layer.borderWidth = 2.0;
+    [_checkmarkImageView setClipsToBounds:YES];
+}
+
 -(void)setConstraintsForContactImageView
 {
     NSString* contactImageViewDiameterString = [[[VeeContactPickerAppearanceConstants sharedInstance] veeContactCellImageDiameter] stringValue];
     [_contactImageView constrainWidth:contactImageViewDiameterString height:contactImageViewDiameterString];
- 
+    
     NSString* contactImageViewMarginString = [[self contactImageViewMargin] stringValue];
     [_contactImageView alignTop:contactImageViewMarginString leading:contactImageViewMarginString bottom:contactImageViewMarginString trailing:@"0" toView:self.contentView];
 }
@@ -104,6 +124,17 @@
     CGFloat horizontalMarginFromContactImageView = 16;
     [_primaryLabel constrainLeadingSpaceToView:_contactImageView predicate:[@(horizontalMarginFromContactImageView) stringValue]];
     [_primaryLabel constrainWidth:[[self cellWidthWithoutPrimaryLabelWithHorizontalMarginFromContactImageView:horizontalMarginFromContactImageView andHorizontalTrailingSpaceToSuperView:16] stringValue]];
+}
+
+-(void)setConstraintsForCheckMarkImage {
+    [_checkmarkImageView alignCenterYWithView:_contactImageView predicate:@"0"];
+    [_checkmarkImageView constrainWidth:@"30"];
+    [_checkmarkImageView constrainHeight:@"30"];
+    NSString* selectioButtonXpos = [[self checkmarkImageXposition] stringValue];
+    [_checkmarkImageView alignTrailingEdgeWithView:self.contentView predicate:selectioButtonXpos];
+}
+-(NSNumber *)checkmarkImageXposition {
+    return @(self.frame.size.width - _contactImageView.frame.size.width);
 }
 
 -(NSNumber*)contactImageViewMargin
@@ -118,5 +149,4 @@
     CGFloat cellWidth = self.contentView.frame.size.width;
     return @(cellWidth - [[self contactImageViewMargin] floatValue] - [[[VeeContactPickerAppearanceConstants sharedInstance] veeContactCellImageDiameter] floatValue] - horizontalTrailingSpaceToSuperView);
 }
-
 @end
