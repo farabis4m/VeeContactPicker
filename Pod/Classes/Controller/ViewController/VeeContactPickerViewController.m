@@ -362,7 +362,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     _isRemovingFromHeader = NO;
     id<VeeContactProt> veeContact = [_veeSectionedArrayDataSource tableView:tableView itemAtIndexPath:indexPath];
-    
+    if (_contactPickerDelegate)
+        [_contactPickerDelegate didDeSelectContact:veeContact];
     [self checkContactIsSelected:veeContact forOperation:Remove indexPath:indexPath];
     
 }
