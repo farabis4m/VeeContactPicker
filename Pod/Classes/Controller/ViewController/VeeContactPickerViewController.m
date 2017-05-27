@@ -335,19 +335,35 @@
         return;
     }
     _isRemovingFromHeader = NO;
+    id<VeeContactProt> veeContact = [_veeSectionedArrayDataSource tableView:tableView itemAtIndexPath:indexPath];
+    __block typeof(self) weakSelf = self;
+    if (_contactPickerDelegate) {
+        [_contactPickerDelegate didSelectContact:veeContact withCompletion:^(BOOL isReegistered) {
+            if (isReegistered)
+                [weakSelf doOperationsForSelectedContact:veeContact inTableView:tableView atIndex:indexPath];
+            else
+                [tableView deselectRowAtIndexPath:indexPath animated:NO];
+        }];
+    }
+    
+    //  [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+-(void)doOperationsForSelectedContact:(VeeContact *)veeContact inTableView:(UITableView *)tableView atIndex:(NSIndexPath *)indexPath {
+    
     [tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
     _selectedContactViewHeightConstraint.constant = 90;
-    id<VeeContactProt> veeContact = [_veeSectionedArrayDataSource tableView:tableView itemAtIndexPath:indexPath];
     if (self.searchDisplayController.active) {
         _isAddingFromSearchController = YES;
-    	indexPath = [_veeSectionedArrayDataSource indexPathForItem:veeContact];
+        indexPath = [_veeSectionedArrayDataSource indexPathForItem:veeContact];
     }else
-        _isAddingFromSearchController = NO;    
+        _isAddingFromSearchController = NO;
     
     [self checkContactIsSelected:veeContact forOperation:Insert indexPath:indexPath];
-    if (_contactPickerDelegate) {
-        [_contactPickerDelegate didSelectContact:veeContact];
-    }
+    
+    BOOL status;
+    
     if (_contactSelectionHandler) {
         _contactSelectionHandler(veeContact);
     }
@@ -355,7 +371,6 @@
         [self.searchDisplayController setActive:NO animated:YES];
     }
     
-    //  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {

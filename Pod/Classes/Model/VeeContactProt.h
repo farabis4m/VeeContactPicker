@@ -2,7 +2,7 @@
 #import "VeeSectionable.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+typedef void (^ContactPickedBlock)(BOOL isReegistered);
 @protocol VeeContactProt <NSObject, VeeSectionableProt>
 
 @property (nonatomic, copy) NSString* firstName;
@@ -28,5 +28,6 @@
 @property (nonatomic, strong) NSArray<id<VeePostalAddressProt> >* postalAddresses;
 @property (nonatomic, strong) NSArray<NSString*>* twitterAccounts;
 @property (nonatomic, strong) NSArray<NSString*>* facebookAccounts;
+@property (nonatomic, copy) ContactPickedBlock contactPickedBlock;
 
 @end

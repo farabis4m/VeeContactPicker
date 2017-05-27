@@ -80,7 +80,7 @@
 
 -(void)updateUIForSelectedContact:(VeeContact*)veeContact
 {
-    _selectedContactLabel.text = @"Selected Contact:";
+    _selectedContactLabel.text = @"Selected Coveeconntact:";
     [self showSelectedContactImage:veeContact];
     [self showPrettyVeeContactDescription:veeContact];
 }

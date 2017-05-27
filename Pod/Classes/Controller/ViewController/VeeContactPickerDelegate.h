@@ -10,7 +10,7 @@
 
 @required
 
-- (BOOL)didSelectContact:(id<VeeContactProt>)abContact;
+- (void)didSelectContact:(id<VeeContactProt>)abContact withCompletion:(ContactPickedBlock)contactPicked;
 - (void)didDeSelectContact:(id<VeeContactProt>)abContact;
 -(void)didSelectContacts:(NSArray<id<VeeContactProt>>*)selectedContacts;
 -(void)contactsLimitExceeded:(int)count;
