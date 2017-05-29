@@ -419,7 +419,7 @@
 #pragma mark - Private Methods
 
 -(void)removeSelectedContactFromHeaderViewAtIndex:(int)index indexPathCorrespondingToTable:(NSIndexPath *)indexPathCorrespondingToTable {
-    
+    [_contactPickerDelegate didDeSelectContact:[_selectedContactsArray objectAtIndex:index]];
     [_selectedContactsArray removeObjectAtIndex:index];
     [_selectedContactsCollectionView reloadData];
     if (_selectedContactsArray.count == 0)

@@ -18,8 +18,11 @@
         
         for (NSString *phoneNumber in veeABRecord.phoneNumbers){
             
-            NSError *error = nil;
-            NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:@"^(?:\\+971|0(0971)?)[5][0-9]{8}$" options:0 error:&error];
+            NSCharacterSet *notAllowedChars = [[NSCharacterSet characterSetWithCharactersInString:@"+0123456789"] invertedSet];
+            NSString *resultString = [[phoneNumber componentsSeparatedByCharactersInSet:notAllowedChars] componentsJoinedByString:@""];
+            
+            NSError *error = nil;  // ^(?:\+971|00971|971|0971|0)(?:50|51|52|55|56)\d{7}$
+            NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:@"^(?:\\+971||971|0(0971)?)[5][0-9]{8}$" options:0 error:&error];  //
              NSTextCheckingResult *match = [regularExpression firstMatchInString:phoneNumber options:0 range:NSMakeRange(0, [phoneNumber length])];
             
             if (match) {
