@@ -9,6 +9,7 @@
 #import "VeeContactPickerOptions.h"
 #import "UIImageView+AGCInitials.h"
 #import "VeeCommons.h"
+#import "VeeContact.h"
 
 @interface VeeContactCellConfiguration ()
 
@@ -53,6 +54,9 @@
         toBoldify = [nameComponents firstObject];
     }
     [veeContactUITableViewCell.primaryLabel vee_boldSubstring:toBoldify];
+    
+    VeeContact * contact = (VeeContact *)veeContact;
+    veeContactUITableViewCell.mobileNumberLabel.text = contact.phoneNumber;
 }
 
 - (void)configureCellImage:(VeeContactUITableViewCell*)veeContactUITableViewCell forVeeContact:(id<VeeContactProt>)veeContact

@@ -155,9 +155,9 @@
 - (void)loadPickerAppearance {
     _cancelBarButtonItem.tintColor = [[VeeContactPickerAppearanceConstants sharedInstance] cancelBarButtonItemTintColor];
     _rightBarButtonItem.tintColor = [[VeeContactPickerAppearanceConstants sharedInstance] cancelBarButtonItemTintColor];
-    [_rightBarButtonItem setTitle:@"Next"];
+    [_rightBarButtonItem setTitle:@"Continue"];
     [_rightBarButtonItem  setTarget:self];
-    [_rightBarButtonItem setAction:@selector(nextButtonTapped:)];
+    [_rightBarButtonItem setAction:@selector(continueButtonTapped:)];
     _navigationBar.tintColor = [[VeeContactPickerAppearanceConstants sharedInstance] navigationBarTintColor];
     _navigationBar.barTintColor = [[VeeContactPickerAppearanceConstants sharedInstance] navigationBarBarTintColor];
     _navigationBar.translucent = [[VeeContactPickerAppearanceConstants sharedInstance] navigationBarTranslucent];
@@ -334,8 +334,14 @@
         [_contactPickerDelegate contactsLimitExceeded:5];
         return;
     }
-    _isRemovingFromHeader = NO;
     id<VeeContactProt> veeContact = [_veeSectionedArrayDataSource tableView:tableView itemAtIndexPath:indexPath];
+    
+    if (!_allowMultipleSelection) {
+        [_contactPickerDelegate  didDeSelectContact:veeContact];
+        return;
+    }
+    
+    _isRemovingFromHeader = NO;
     __block typeof(self) weakSelf = self;
     if (_contactPickerDelegate) {
         [_contactPickerDelegate didSelectContact:veeContact withCompletion:^(BOOL isReegistered) {

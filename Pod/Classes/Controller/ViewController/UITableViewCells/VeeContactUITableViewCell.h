@@ -9,6 +9,7 @@
 
 @property (strong, nonatomic) UIImageView *contactImageView;
 @property (strong, nonatomic) UILabel	  *primaryLabel;
+@property (strong, nonatomic) UILabel	  *mobileNumberLabel;
 @property (strong, nonatomic) UIImageView *checkmarkImageView;
 
 @end

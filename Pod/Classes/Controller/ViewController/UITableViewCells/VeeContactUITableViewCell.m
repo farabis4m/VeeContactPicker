@@ -28,6 +28,7 @@
     
     [self addContactImageViewToSubView];
     [self addPrimaryLabelToSubView];
+    [self addMobileNumberLabelToSubView];
     [self addselctionCheckButtonToSubView];
     
     NSString *bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"VeeContactPicker" ofType:@"bundle"];
@@ -105,6 +106,15 @@
     [self setConstraintsForPrimaryLabel];
 }
 
+-(void)addMobileNumberLabelToSubView
+{
+    _mobileNumberLabel = [UILabel new];
+    [self addSubview:_mobileNumberLabel];
+    _mobileNumberLabel.font = [UIFont systemFontOfSize:12];
+    _mobileNumberLabel.textColor = [UIColor lightGrayColor];
+    [self setConstraintsForMobileNumberLabel];
+}
+
 -(void)addselctionCheckButtonToSubView {
     _checkmarkImageView = [UIImageView new];
     [_checkmarkImageView setBackgroundColor:[UIColor clearColor]];
@@ -124,10 +134,18 @@
 
 -(void)setConstraintsForPrimaryLabel
 {
-    [_primaryLabel alignCenterYWithView:_contactImageView predicate:@"0"];
+    [_primaryLabel alignCenterYWithView:_contactImageView predicate:@"-10"];
     CGFloat horizontalMarginFromContactImageView = 16;
     [_primaryLabel constrainLeadingSpaceToView:_contactImageView predicate:[@(horizontalMarginFromContactImageView) stringValue]];
     [_primaryLabel constrainWidth:[[self cellWidthWithoutPrimaryLabelWithHorizontalMarginFromContactImageView:horizontalMarginFromContactImageView andHorizontalTrailingSpaceToSuperView:16] stringValue]];
+}
+
+-(void)setConstraintsForMobileNumberLabel
+{
+    [_mobileNumberLabel alignCenterYWithView:_contactImageView predicate:@"10"];
+    CGFloat horizontalMarginFromContactImageView = 16;
+    [_mobileNumberLabel constrainLeadingSpaceToView:_contactImageView predicate:[@(horizontalMarginFromContactImageView) stringValue]];
+    [_mobileNumberLabel constrainWidth:[[self cellWidthWithoutPrimaryLabelWithHorizontalMarginFromContactImageView:horizontalMarginFromContactImageView andHorizontalTrailingSpaceToSuperView:16] stringValue]];
 }
 
 -(void)setConstraintsForCheckMarkImage {
