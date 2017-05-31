@@ -10,7 +10,7 @@
 #import "VeeContactPickerAppearanceConstants.h"
 
 @interface VeeContactUITableViewCell ()
-
+@property (nonatomic, strong) NSBundle * assetBundle;
 @end
 
 @implementation VeeContactUITableViewCell
@@ -29,6 +29,10 @@
     [self addContactImageViewToSubView];
     [self addPrimaryLabelToSubView];
     [self addselctionCheckButtonToSubView];
+    
+    NSString *bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"VeeContactPicker" ofType:@"bundle"];
+    _assetBundle = [NSBundle bundleWithPath:bundlePath];
+    
     return self;
 }
 
@@ -50,11 +54,14 @@
   
     [super setSelected:selected animated:animated];
     [self.backgroundView setBackgroundColor:[UIColor clearColor]];
-    if (selected) {
-        [_checkmarkImageView setBackgroundColor:[UIColor greenColor]];
-    }else{
-        [_checkmarkImageView setBackgroundColor:[UIColor clearColor]];
-    }
+     NSString *filePath = @"";
+    if (selected)
+        filePath = [_assetBundle pathForResource:@"radio_Selected" ofType:@"png"];
+    else
+        filePath = [_assetBundle pathForResource:@"radio_Deselected" ofType:@"png"];
+   
+    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+    [_checkmarkImageView setImage:image];
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
@@ -103,9 +110,6 @@
     [_checkmarkImageView setBackgroundColor:[UIColor clearColor]];
     [self addSubview:_checkmarkImageView];
     [self setConstraintsForCheckMarkImage];
-    [_checkmarkImageView.layer setCornerRadius:_checkmarkImageView.bounds.size.width/2];
-    _checkmarkImageView.layer.borderColor = [UIColor grayColor].CGColor;
-    _checkmarkImageView.layer.borderWidth = 2.0;
     [_checkmarkImageView setClipsToBounds:YES];
 }
 

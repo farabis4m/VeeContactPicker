@@ -131,6 +131,8 @@
 		C2EFAA6A1ED5AAAD00E1744A /* ContactPickerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C2EFAA671ED5AAAD00E1744A /* ContactPickerCell.h */; };
 		C2EFAA6B1ED5AAAD00E1744A /* ContactPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EFAA681ED5AAAD00E1744A /* ContactPickerCell.m */; };
 		C2EFAA6C1ED5AAAD00E1744A /* ContactPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EFAA681ED5AAAD00E1744A /* ContactPickerCell.m */; };
+		C2F6BB451EDEB50D000ED759 /* radio_Deselected.png in Resources */ = {isa = PBXBuildFile; fileRef = C2F6BB431EDEB50D000ED759 /* radio_Deselected.png */; };
+		C2F6BB461EDEB50D000ED759 /* radio_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = C2F6BB441EDEB50D000ED759 /* radio_Selected.png */; };
 		C389E0223F8EEA143FA6575BC6FCFEB1 /* NSLayoutConstraint+FLKAutoLayoutDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = DC471859A5B0E289481324ECF6F7F5EC /* NSLayoutConstraint+FLKAutoLayoutDebug.m */; };
 		C4235F3704F471BAF74CB4482A99D340 /* OCMReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = A2557835640C27067E65FD0383B7260D /* OCMReturnValueProvider.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C508640C7607A5BE183916AC4202A026 /* OCMInvocationMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 7363EB666A06F898301382F18132761D /* OCMInvocationMatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -410,6 +412,8 @@
 		C12973F8466CFBB121438E55ED99775B /* VeeCommons.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = VeeCommons.m; sourceTree = "<group>"; };
 		C2EFAA671ED5AAAD00E1744A /* ContactPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactPickerCell.h; sourceTree = "<group>"; };
 		C2EFAA681ED5AAAD00E1744A /* ContactPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactPickerCell.m; sourceTree = "<group>"; };
+		C2F6BB431EDEB50D000ED759 /* radio_Deselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_Deselected.png; sourceTree = "<group>"; };
+		C2F6BB441EDEB50D000ED759 /* radio_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_Selected.png; sourceTree = "<group>"; };
 		C748C6E66F6F677234E9BBF9A1FAC35E /* FLKAutoLayoutPredicateList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLKAutoLayoutPredicateList.h; path = FLKAutoLayout/Private/FLKAutoLayoutPredicateList.h; sourceTree = "<group>"; };
 		C89908061BAB4DDC40D6F2F4A1D02757 /* AGCObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AGCObject.h; path = "NSObject-AGCDescription/Classes/AGCObject.h"; sourceTree = "<group>"; };
 		C900D4272736D6FC063816B4F897F2AD /* OCMObserverRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMObserverRecorder.m; path = Source/OCMock/OCMObserverRecorder.m; sourceTree = "<group>"; };
@@ -541,6 +545,8 @@
 			isa = PBXGroup;
 			children = (
 				BA3FCE01B80A14D7239210BD75B76853 /* VeeContactPickerViewController.xib */,
+				C2F6BB431EDEB50D000ED759 /* radio_Deselected.png */,
+				C2F6BB441EDEB50D000ED759 /* radio_Selected.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -1311,6 +1317,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BD416FA8039137FF54B9965E191BF0C /* VeeContactPickerViewController.xib in Resources */,
+				C2F6BB451EDEB50D000ED759 /* radio_Deselected.png in Resources */,
+				C2F6BB461EDEB50D000ED759 /* radio_Selected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
