@@ -337,7 +337,7 @@
     id<VeeContactProt> veeContact = [_veeSectionedArrayDataSource tableView:tableView itemAtIndexPath:indexPath];
     
     if (!_allowMultipleSelection) {
-        [_contactPickerDelegate  didDeSelectContact:veeContact];
+        [_contactPickerDelegate  didSelectContact:veeContact withCompletion:nil];
         return;
     }
     
