@@ -153,8 +153,8 @@
 
 - (void)loadPickerAppearance {
     
-    _cancelBarButtonItem.tintColor = [[VeeContactPickerAppearanceConstants sharedInstance] cancelBarButtonItemTintColor];
-    _rightBarButtonItem.tintColor = [[VeeContactPickerAppearanceConstants sharedInstance] cancelBarButtonItemTintColor];
+    _cancelBarButtonItem.tintColor = [UIColor whiteColor];
+    _rightBarButtonItem.tintColor = [UIColor whiteColor];
     [_rightBarButtonItem setTitle:@"Continue"];
     [_rightBarButtonItem  setTarget:self];
     [_rightBarButtonItem setAction:@selector(continueButtonTapped:)];
