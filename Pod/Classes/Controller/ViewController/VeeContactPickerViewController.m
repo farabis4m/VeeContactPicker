@@ -134,7 +134,6 @@
     [self loadPickerAppearance];
     _addressBookRef = ABAddressBookCreate();
     [self.selectedContactsCollectionView registerClass:[ContactPickerCell class] forCellWithReuseIdentifier:@"cell"];
-    //  [self.selectedContactsCollectionView registerClass:[ class] forCellWithReuseIdentifier:@"cell"];
     [self.selectedContactsCollectionView setPagingEnabled:YES];
     
     [self loadVeeContacts];
@@ -153,15 +152,12 @@
 }
 
 - (void)loadPickerAppearance {
+    
     _cancelBarButtonItem.tintColor = [[VeeContactPickerAppearanceConstants sharedInstance] cancelBarButtonItemTintColor];
     _rightBarButtonItem.tintColor = [[VeeContactPickerAppearanceConstants sharedInstance] cancelBarButtonItemTintColor];
     [_rightBarButtonItem setTitle:@"Continue"];
     [_rightBarButtonItem  setTarget:self];
     [_rightBarButtonItem setAction:@selector(continueButtonTapped:)];
-    _navigationBar.tintColor = [[VeeContactPickerAppearanceConstants sharedInstance] navigationBarTintColor];
-    _navigationBar.barTintColor = [[VeeContactPickerAppearanceConstants sharedInstance] navigationBarBarTintColor];
-    _navigationBar.translucent = [[VeeContactPickerAppearanceConstants sharedInstance] navigationBarTranslucent];
-    _statusBarCoverView.backgroundColor = [[VeeContactPickerAppearanceConstants sharedInstance] navigationBarBarTintColor];
     _tableViewBottomMarginConstraint.constant = [[VeeContactPickerAppearanceConstants sharedInstance] veeContactPickerTableViewBottomMargin];
     if (_selectedContactsArray.count <= 0)
         _selectedContactViewHeightConstraint.constant = 10;
