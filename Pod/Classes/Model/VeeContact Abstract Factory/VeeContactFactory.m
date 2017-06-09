@@ -26,7 +26,7 @@
              NSTextCheckingResult *match = [regularExpression firstMatchInString:resultString options:0 range:NSMakeRange(0, [resultString length])];
             
             if (match) {
-                veeABRecord.phoneNumber = phoneNumber;
+                veeABRecord.phoneNumber = resultString;
                 id<VeeContactProt> veeContact = [[VeeContact alloc] initWithVeeABRecord:veeABRecord];
                 [veeContacts addObject:veeContact];
             }
