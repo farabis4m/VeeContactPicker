@@ -57,7 +57,7 @@
 }
 
 -(void)populateUI {
-    _nameLabel.text	=_contact.firstName;
+   // _nameLabel.text	=_contact.firstName;
     if (_contact.thumbnailImage != nil)
         [_contactImageView setImage:_contact.thumbnailImage];
     else
