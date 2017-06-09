@@ -158,6 +158,13 @@
     [_rightBarButtonItem setTitle:@"Continue"];
     [_rightBarButtonItem  setTarget:self];
     [_rightBarButtonItem setAction:@selector(continueButtonTapped:)];
+    
+    _rightBarButtonItem.enabled = _allowMultipleSelection;
+    
+    if (!_allowMultipleSelection) {
+         _rightBarButtonItem.tintColor = [UIColor clearColor];
+    }
+
     _tableViewBottomMarginConstraint.constant = [[VeeContactPickerAppearanceConstants sharedInstance] veeContactPickerTableViewBottomMargin];
     if (_selectedContactsArray.count <= 0)
         _selectedContactViewHeightConstraint.constant = 10;
