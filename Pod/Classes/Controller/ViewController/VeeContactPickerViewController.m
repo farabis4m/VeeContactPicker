@@ -208,6 +208,7 @@
     
     [self registerCellsForReuse];
     ConfigureCellBlock veeContactConfigureCellBlock = ^(VeeContactUITableViewCell* cell, id<VeeContactProt> veeContact) {
+        [_veeContactCellConfiguration setShowRadioImage:_allowMultipleSelection];
         [_veeContactCellConfiguration configureCell:cell forVeeContact:veeContact];
     };
     NSString* cellIdentifier = [[VeeContactPickerAppearanceConstants sharedInstance] veeContactCellIdentifier];

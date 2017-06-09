@@ -10,6 +10,8 @@
 
 @interface VeeContactCellConfiguration : NSObject
 
+@property (nonatomic, assign) BOOL showRadioImage;
+
 #pragma mark - Initializers
 
 - (instancetype)initWithVeePickerOptions:(VeeContactPickerOptions*)veeContactPickerOptions;

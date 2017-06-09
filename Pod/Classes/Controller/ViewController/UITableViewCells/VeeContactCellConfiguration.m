@@ -36,6 +36,7 @@
 {
     [self configureCellLabels:veeContactUITableViewCell forVeeContact:veeContact];
     [self configureCellImage:veeContactUITableViewCell forVeeContact:veeContact];
+    [veeContactUITableViewCell.checkmarkImageView setHidden:!_showRadioImage];
 }
 
 #pragma mark - Private utils
