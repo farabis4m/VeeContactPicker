@@ -129,6 +129,8 @@
 		C11D7D634379188EAD10402E14688994 /* AGCObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DF8A572396F55E496847B3044E6A611F /* AGCObject.m */; };
 		C2CEA6B31EED031D00741EB6 /* radio_Deselected.png in Resources */ = {isa = PBXBuildFile; fileRef = C2CEA6B11EED031D00741EB6 /* radio_Deselected.png */; };
 		C2CEA6B41EED031D00741EB6 /* radio_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = C2CEA6B21EED031D00741EB6 /* radio_Selected.png */; };
+		C2CEA6BC1EED066A00741EB6 /* radio_Deselected.png in Resources */ = {isa = PBXBuildFile; fileRef = C2CEA6BA1EED066A00741EB6 /* radio_Deselected.png */; };
+		C2CEA6BD1EED066A00741EB6 /* radio_Selected.png in Resources */ = {isa = PBXBuildFile; fileRef = C2CEA6BB1EED066A00741EB6 /* radio_Selected.png */; };
 		C2EFAA691ED5AAAD00E1744A /* ContactPickerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C2EFAA671ED5AAAD00E1744A /* ContactPickerCell.h */; };
 		C2EFAA6A1ED5AAAD00E1744A /* ContactPickerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C2EFAA671ED5AAAD00E1744A /* ContactPickerCell.h */; };
 		C2EFAA6B1ED5AAAD00E1744A /* ContactPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2EFAA681ED5AAAD00E1744A /* ContactPickerCell.m */; };
@@ -412,6 +414,8 @@
 		C12973F8466CFBB121438E55ED99775B /* VeeCommons.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = VeeCommons.m; sourceTree = "<group>"; };
 		C2CEA6B11EED031D00741EB6 /* radio_Deselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_Deselected.png; sourceTree = "<group>"; };
 		C2CEA6B21EED031D00741EB6 /* radio_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_Selected.png; sourceTree = "<group>"; };
+		C2CEA6BA1EED066A00741EB6 /* radio_Deselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_Deselected.png; sourceTree = "<group>"; };
+		C2CEA6BB1EED066A00741EB6 /* radio_Selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_Selected.png; sourceTree = "<group>"; };
 		C2EFAA671ED5AAAD00E1744A /* ContactPickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactPickerCell.h; sourceTree = "<group>"; };
 		C2EFAA681ED5AAAD00E1744A /* ContactPickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactPickerCell.m; sourceTree = "<group>"; };
 		C748C6E66F6F677234E9BBF9A1FAC35E /* FLKAutoLayoutPredicateList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLKAutoLayoutPredicateList.h; path = FLKAutoLayout/Private/FLKAutoLayoutPredicateList.h; sourceTree = "<group>"; };
@@ -737,6 +741,8 @@
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
+				C2CEA6BA1EED066A00741EB6 /* radio_Deselected.png */,
+				C2CEA6BB1EED066A00741EB6 /* radio_Selected.png */,
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				FC5360D5951A428462F794A58DA58620 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
@@ -1209,6 +1215,7 @@
 				00546077DBE4D85851934B01168FF5C9 /* Sources */,
 				B552E65283DAD2E02A86AD247DE4AEC7 /* Frameworks */,
 				F619973AB01F7B265138B07003469486 /* Headers */,
+				C2CEA6B91EED060A00741EB6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1319,6 +1326,15 @@
 				5BD416FA8039137FF54B9965E191BF0C /* VeeContactPickerViewController.xib in Resources */,
 				C2CEA6B31EED031D00741EB6 /* radio_Deselected.png in Resources */,
 				C2CEA6B41EED031D00741EB6 /* radio_Selected.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2CEA6B91EED060A00741EB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2CEA6BC1EED066A00741EB6 /* radio_Deselected.png in Resources */,
+				C2CEA6BD1EED066A00741EB6 /* radio_Selected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
