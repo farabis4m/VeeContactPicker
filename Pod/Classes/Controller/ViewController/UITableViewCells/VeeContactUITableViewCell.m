@@ -55,14 +55,8 @@
   
     [super setSelected:selected animated:animated];
     [self.backgroundView setBackgroundColor:[UIColor clearColor]];
-     NSString *filePath = @"";
-    if (selected)
-        filePath = [_assetBundle pathForResource:@"radio_Selected" ofType:@"png"];
-    else
-        filePath = [_assetBundle pathForResource:@"radio_Deselected" ofType:@"png"];
-   
-    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
-    [_checkmarkImageView setImage:image];
+
+    [_checkmarkImageView setImage: selected ? [UIImage imageNamed:@"Radio_Deselected"] : [UIImage imageNamed:@"Radio_Selected"]];
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated
