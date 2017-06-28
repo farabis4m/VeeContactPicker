@@ -55,8 +55,10 @@
   
     [super setSelected:selected animated:animated];
     [self.backgroundView setBackgroundColor:[UIColor clearColor]];
+    
+    UIImage *image = [UIImage imageNamed: selected ? @"Radio_Selected" : @"Radio_Deselected" inBundle:self.assetBundle compatibleWithTraitCollection:nil];
 
-    [_checkmarkImageView setImage: selected ? [UIImage imageNamed:@"Radio_Deselected"] : [UIImage imageNamed:@"Radio_Selected"]];
+    [_checkmarkImageView setImage: image];
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated

@@ -17,7 +17,7 @@ s.social_media_url = 'https://github.com/CodeAtlas'
 s.platform     = :ios, '7.0'
 s.requires_arc = true
 s.source_files = 'Pod/Classes/**/*'
-s.resource_bundles = { 'VeeContactPicker' => ['Pod/Assets/*.{xib}', 'Pod/Assets/Media.xcassets']}
+s.resource_bundles = { 'VeeContactPicker' => ['Pod/Assets/*.{xib}', 'Pod/Assets/*.{png}']}
 s.dependency 'UIImageView-AGCInitials'
 s.dependency 'FLKAutoLayout'
 end
