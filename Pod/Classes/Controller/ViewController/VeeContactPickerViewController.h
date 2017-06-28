@@ -41,6 +41,7 @@ typedef enum{
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *groupHederViewHeightConstraint;
 @property (strong, nonatomic) NSMutableArray *selectedContactsArray;
 @property (nonatomic, assign) BOOL allowMultipleSelection;
+@property (nonatomic, strong) NSDictionary *stringsDictionary;
 #pragma mark - IBActions
 
 - (IBAction)cancelBarButtonItemPressed:(id)sender;

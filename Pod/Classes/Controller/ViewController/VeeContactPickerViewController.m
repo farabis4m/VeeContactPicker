@@ -147,15 +147,15 @@
 #pragma mark - DidLoad Utils
 
 - (void)loadStrings {
-    _titleNavigationItem.title = [_veeContactPickerOptions.veeContactPickerStrings navigationBarTitle];
-    _cancelBarButtonItem.title = [_veeContactPickerOptions.veeContactPickerStrings cancelButtonTitle];
+    _titleNavigationItem.title = [_stringsDictionary valueForKey:@"title"]; //[_veeContactPickerOptions.veeContactPickerStrings navigationBarTitle];
+    _cancelBarButtonItem.title = [_stringsDictionary valueForKey:@"cancel"]; //[_veeContactPickerOptions.veeContactPickerStrings cancelButtonTitle];
 }
 
 - (void)loadPickerAppearance {
     
     _cancelBarButtonItem.tintColor = [UIColor whiteColor];
     _rightBarButtonItem.tintColor = [UIColor whiteColor];
-    [_rightBarButtonItem setTitle:@"Continue"];
+    [_rightBarButtonItem setTitle:[_stringsDictionary valueForKey:@"next"]];
     [_rightBarButtonItem  setTarget:self];
     [_rightBarButtonItem setAction:@selector(continueButtonTapped:)];
     
@@ -505,7 +505,7 @@
 }
 
 -(void)nextButtonTapped:(id)sender {
-    [_rightBarButtonItem setTitle:@"Continue"];
+    [_rightBarButtonItem setTitle:[_stringsDictionary valueForKey:@"next"]];
     [_rightBarButtonItem setAction:@selector(continueButtonTapped:)];
     
     dispatch_async(dispatch_get_main_queue(), ^{
