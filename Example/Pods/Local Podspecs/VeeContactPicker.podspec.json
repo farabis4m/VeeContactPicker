@@ -1,6 +1,6 @@
 {
   "name": "VeeContactPicker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "summary": "A replacement for the iOS ABPeoplePickerNavigationController, with contacts' images",
   "description": "VeeContactPicker is a replacement for the (bugged) ABPeoplePickerNavigationController. You can use it to let the user choose a contact from the address book.",
   "homepage": "https://github.com/CodeAtlas/VeeContactPicker",
@@ -11,7 +11,7 @@
   },
   "source": {
     "git": "https://github.com/CodeAtlas/VeeContactPicker.git",
-    "tag": "0.0.2"
+    "tag": "0.0.3"
   },
   "social_media_url": "https://github.com/CodeAtlas",
   "platforms": {
@@ -21,14 +21,12 @@
   "source_files": "Pod/Classes/**/*",
   "resource_bundles": {
     "VeeContactPicker": [
-      "Pod/Assets/*.{xib}"
+      "Pod/Assets/*.{xib}",
+      "Pod/Assets/*.{png}"
     ]
   },
   "dependencies": {
     "UIImageView-AGCInitials": [
-
-    ],
-    "NSObject-AGCDescription": [
 
     ],
     "FLKAutoLayout": [
