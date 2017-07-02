@@ -8,6 +8,7 @@
 #import "UILabel+VeeBoldify.h"
 #import "VeeContactPickerOptions.h"
 #import "UIImageView+AGCInitials.h"
+#import "UIImageView+Letters.h"
 #import "VeeCommons.h"
 #import "VeeContact.h"
 
@@ -66,12 +67,21 @@
         veeContactUITableViewCell.contactImageView.image = [veeContact thumbnailImage];
     }
     else {
-        if (_veeContactPickerOptions.showInitialsPlaceholder) {
-            [veeContactUITableViewCell.contactImageView agc_setImageWithInitialsFromName:[veeContact displayName] separatedByString:@" "];
-        }
-        else {
-            [veeContactUITableViewCell.contactImageView setImage:_veeContactPickerOptions.contactThumbnailImagePlaceholder];
-        }
+//        if (_veeContactPickerOptions.showInitialsPlaceholder) {
+//            [veeContactUITableViewCell.contactImageView agc_setImageWithInitialsFromName:[veeContact displayName] separatedByString:@" "];
+//        }
+//        else {
+//            [veeContactUITableViewCell.contactImageView setImage:_veeContactPickerOptions.contactThumbnailImagePlaceholder];
+//        }
+        NSString * contactName = @"";
+        //--Set beneficiary image with initials  (if image not available)
+        if ([veeContact displayName].length > 0)
+            contactName = [NSString stringWithFormat:@"%@",[veeContact displayName]];
+        else
+            contactName = @"?";
+        
+        [veeContactUITableViewCell.contactImageView setImageWithString:contactName color:[UIColor colorWithRed:91/255.0 green:155/255.0 blue:213/255.0 alpha:1] circular:YES];
+        
     }
 }
 

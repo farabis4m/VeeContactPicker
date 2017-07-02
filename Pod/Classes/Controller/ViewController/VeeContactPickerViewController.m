@@ -253,8 +253,13 @@
 - (void)registerCellsForReuse {
     
     NSString* cellIdentifier = [[VeeContactPickerAppearanceConstants sharedInstance] veeContactCellIdentifier];
-    [_contactsTableView registerClass:[VeeContactUITableViewCell class] forCellReuseIdentifier:cellIdentifier];
-    [self.searchDisplayController.searchResultsTableView registerClass:[VeeContactUITableViewCell class] forCellReuseIdentifier:cellIdentifier];
+//    [_contactsTableView registerClass:[VeeContactUITableViewCell class] forCellReuseIdentifier:cellIdentifier];
+//    [self.searchDisplayController.searchResultsTableView registerClass:[VeeContactUITableViewCell class] forCellReuseIdentifier:cellIdentifier];
+    
+    NSString *bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"VeeContactPicker" ofType:@"bundle"];
+    UINib *nib  = [UINib nibWithNibName:@"VeeContactUITableViewCell" bundle:[NSBundle bundleWithPath:bundlePath]];
+    [_contactsTableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
+    [self.searchDisplayController.searchResultsTableView registerNib:nib forCellReuseIdentifier:cellIdentifier];
 }
 
 #pragma mark - VeeABDelegate

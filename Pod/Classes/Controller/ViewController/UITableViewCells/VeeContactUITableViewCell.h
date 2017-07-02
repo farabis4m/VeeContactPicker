@@ -7,9 +7,9 @@
 
 @interface VeeContactUITableViewCell : UITableViewCell
 
-@property (strong, nonatomic) UIImageView *contactImageView;
-@property (strong, nonatomic) UILabel	  *primaryLabel;
-@property (strong, nonatomic) UILabel	  *mobileNumberLabel;
-@property (strong, nonatomic) UIImageView *checkmarkImageView;
+@property (strong, nonatomic)IBOutlet UIImageView *contactImageView;
+@property (strong, nonatomic)IBOutlet UILabel	  *primaryLabel;
+@property (strong, nonatomic)IBOutlet UILabel	  *mobileNumberLabel;
+@property (strong, nonatomic)IBOutlet UIImageView *checkmarkImageView;
 
 @end

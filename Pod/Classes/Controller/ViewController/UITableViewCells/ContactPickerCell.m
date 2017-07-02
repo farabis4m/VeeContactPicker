@@ -7,7 +7,8 @@
 //
 
 #import "ContactPickerCell.h"
-#import "UIImageView+AGCInitials.h"
+//#import "UIImageView+AGCInitials.h"
+#import "UIImageView+Letters.h"
 
 @interface ContactPickerCell()
 @property (strong, nonatomic) UIImageView *contactImageView;
@@ -60,8 +61,17 @@
    // _nameLabel.text	=_contact.firstName;
     if (_contact.thumbnailImage != nil)
         [_contactImageView setImage:_contact.thumbnailImage];
-    else
-        [_contactImageView agc_setImageWithInitialsFromName:[_contact displayName] separatedByString:@" "];
+    else {
+        //[_contactImageView agc_setImageWithInitialsFromName:[_contact displayName] separatedByString:@" "];
+    	
+        NSString * contactName = @"";
+        //--Set beneficiary image with initials  (if image not available)
+        if ([_contact displayName].length > 0)
+            contactName = [NSString stringWithFormat:@"%@",[_contact displayName]];
+        else
+            contactName = @"?";
+        [_contactImageView setImageWithString:contactName color:[UIColor colorWithRed:91/255.0 green:155/255.0 blue:213/255.0 alpha:1] circular:YES];
+    }
 }
 
 - (IBAction)removeButtonTapped:(id)sender {

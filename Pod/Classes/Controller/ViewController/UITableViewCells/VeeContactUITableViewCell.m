@@ -15,26 +15,47 @@
 
 @implementation VeeContactUITableViewCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+//- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+//{
+//    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+//    
+//    if (!self) {
+//        return nil;
+//    }
+//    
+//    self.backgroundColor = [UIColor clearColor]; // [[VeeContactPickerAppearanceConstants sharedInstance] veeContactCellBackgroundColor];
+//    [self setCellSelectedBackgroundColor];
+//    
+//    [self addContactImageViewToSubView];
+//    [self addPrimaryLabelToSubView];
+//    [self addMobileNumberLabelToSubView];
+//    [self addselctionCheckButtonToSubView];
+//    
+//    NSString *bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"VeeContactPicker" ofType:@"bundle"];
+//    _assetBundle = [NSBundle bundleWithPath:bundlePath];
+//    
+//    return self;
+//}
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    // Initialization code
     
-    if (!self) {
-        return nil;
-    }
-    
+    //Configure Cell
     self.backgroundColor = [UIColor clearColor]; // [[VeeContactPickerAppearanceConstants sharedInstance] veeContactCellBackgroundColor];
     [self setCellSelectedBackgroundColor];
+    _contactImageView.layer.cornerRadius = [[[VeeContactPickerAppearanceConstants sharedInstance] veeContactCellImageDiameter] floatValue] / 2;
+    _contactImageView.contentMode = UIViewContentModeScaleAspectFill;
+    _contactImageView.clipsToBounds = YES;
     
-    [self addContactImageViewToSubView];
-    [self addPrimaryLabelToSubView];
-    [self addMobileNumberLabelToSubView];
-    [self addselctionCheckButtonToSubView];
+    _primaryLabel.font = [[VeeContactPickerAppearanceConstants sharedInstance] veeContactCellPrimaryLabelFont];
+    
+    _mobileNumberLabel.font = [UIFont systemFontOfSize:12];
+    _mobileNumberLabel.textColor = [UIColor lightGrayColor];
+    [_checkmarkImageView setClipsToBounds:YES];
     
     NSString *bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"VeeContactPicker" ofType:@"bundle"];
     _assetBundle = [NSBundle bundleWithPath:bundlePath];
-    
-    return self;
 }
 
 -(void)setCellSelectedBackgroundColor
