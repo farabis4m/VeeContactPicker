@@ -75,10 +75,7 @@
 
 -(NSIndexPath *)indexPathForItem:(id<VeeSectionableProt>)item {
     NSString* sectionIdenfier = [self sectionIdentifierForItem:item];
-    NSMutableArray *keys = [_sectionedItems allKeys];
-    keys = [keys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-    NSUInteger section = [keys indexOfObject: sectionIdenfier ];
-    
+    NSUInteger section = [_sortedNonEmptySectionIdentifiers indexOfObject: sectionIdenfier];
     NSArray<id<VeeSectionableProt>>* itemsForSection = [self itemsForSection:section isSearchTableView:NO];
     __block NSInteger rowIndex = NSNotFound;
     [itemsForSection enumerateObjectsUsingBlock:^(id<VeeSectionableProt>  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -89,9 +86,10 @@
         
     }];
     
-    if (rowIndex != NSNotFound) {
+    if (rowIndex != NSNotFound)
         return  [NSIndexPath indexPathForRow:rowIndex inSection:section];
-    }
+    else
+        return nil;
 }
 
 

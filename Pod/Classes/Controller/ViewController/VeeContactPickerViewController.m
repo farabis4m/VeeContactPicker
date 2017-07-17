@@ -375,10 +375,8 @@
     }else
         _isAddingFromSearchController = NO;
     
-    [self checkContactIsSelected:veeContact forOperation:Insert indexPath:indexPath];
-    
-    BOOL status;
-    
+    if (indexPath !=nil)
+        [self checkContactIsSelected:veeContact forOperation:Insert indexPath:indexPath];
     if (_contactSelectionHandler) {
         _contactSelectionHandler(veeContact);
     }
