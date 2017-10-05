@@ -131,12 +131,17 @@
     _selectedContactsIndexArray = [NSMutableArray new];
     
     [self loadStrings];
-    [self loadPickerAppearance];
+   // [self loadPickerAppearance];
     _addressBookRef = ABAddressBookCreate();
     [self.selectedContactsCollectionView registerClass:[ContactPickerCell class] forCellWithReuseIdentifier:@"cell"];
     [self.selectedContactsCollectionView setPagingEnabled:YES];
     
     [self loadVeeContacts];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self loadPickerAppearance];
 }
 
 - (void)didReceiveMemoryWarning
