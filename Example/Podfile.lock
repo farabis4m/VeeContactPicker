@@ -1,0 +1,25 @@
+PODS:
+  - FLKAutoLayout (1.0.1)
+  - OCMock (3.3.1)
+  - UIImageView-AGCInitials (0.0.2)
+  - VeeContactPicker (0.0.3):
+    - FLKAutoLayout
+    - UIImageView-AGCInitials
+
+DEPENDENCIES:
+  - OCMock
+  - VeeContactPicker (from `../`)
+
+EXTERNAL SOURCES:
+  VeeContactPicker:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FLKAutoLayout: 37e1e09de6411dbee5526860d9f55d9063323ea8
+  OCMock: f3f61e6eaa16038c30caa5798c5e49d3307b6f22
+  UIImageView-AGCInitials: 4326faf01587dbfa2ffdee7e596ae96c1beca05c
+  VeeContactPicker: c8bc5b34a6c80b10e1a59f4773f2d5f75854a672
+
+PODFILE CHECKSUM: 7036de6d6e4fc256946086bdba3640851ccdae75
+
+COCOAPODS: 1.3.1
