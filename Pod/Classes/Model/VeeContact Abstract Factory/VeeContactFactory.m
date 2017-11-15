@@ -22,7 +22,7 @@
             NSString *resultString = [[phoneNumber componentsSeparatedByCharactersInSet:notAllowedChars] componentsJoinedByString:@""];
             
             NSError *error = nil;  // ^(?:\+971|00971|971|0971|0)(?:50|51|52|55|56)\d{7}$
-            NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:@"^(?:\\+971|971|0(0971)?)[5][0-9]{8}$" options:0 error:&error];  //
+            NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:@"^(?:\\+971|0(0971)?)[5][0-9]{8}$" options:0 error:&error];  //
              NSTextCheckingResult *match = [regularExpression firstMatchInString:resultString options:0 range:NSMakeRange(0, [resultString length])];
             
             if (match) {
