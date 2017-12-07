@@ -345,6 +345,7 @@
 
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath {
     if (_selectedContactsArray.count == 5) {
+        [tableView deselectRowAtIndexPath:indexPath animated:NO];
         [_contactPickerDelegate contactsLimitExceeded:5];
         return;
     }
