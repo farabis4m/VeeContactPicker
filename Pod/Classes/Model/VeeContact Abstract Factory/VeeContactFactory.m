@@ -4,7 +4,7 @@
 #import "VeeContact.h"
 
 @interface VeeContactFactory()
--(VeeABRecord *)createContactForAdditionalPhoneNumber;
+
 @end
 
 @implementation VeeContactFactory
@@ -37,7 +37,5 @@
     return [NSArray arrayWithArray:veeContacts];
 }
 
--(VeeABRecord *)createContactForAdditionalPhoneNumber {
-}
 
 @end
