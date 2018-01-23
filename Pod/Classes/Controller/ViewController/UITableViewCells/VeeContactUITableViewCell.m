@@ -50,6 +50,9 @@
     
     _primaryLabel.font = [[VeeContactPickerAppearanceConstants sharedInstance] veeContactCellPrimaryLabelFont];
     
+    if ([UIApplication sharedApplication].userInterfaceLayoutDirection == UIUserInterfaceLayoutDirectionRightToLeft) {
+        [_mobileNumberLabel setTextAlignment: NSTextAlignmentRight];
+    }
     _mobileNumberLabel.font = [UIFont systemFontOfSize:12];
     _mobileNumberLabel.textColor = [UIColor lightGrayColor];
     [_checkmarkImageView setClipsToBounds:YES];
