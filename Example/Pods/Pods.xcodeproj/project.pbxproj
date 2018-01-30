@@ -112,6 +112,7 @@
 		BAC0BDE87C9152E6C109755515C1D26F /* OCMIndirectReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D115DB3EECCD85B8DBD880796FDFE65 /* OCMIndirectReturnValueProvider.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BC601DE9DC899B96B11B67DF9260AEFB /* NSObject+FLKAutoLayoutDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = DA26A7DB9CD0C246B4F1F66B415EBE2A /* NSObject+FLKAutoLayoutDebug.m */; };
 		BF6FB2993CB14EF6BAFB17E6297BC728 /* OCMMacroState.m in Sources */ = {isa = PBXBuildFile; fileRef = 8696018EAD94107C80C6D9A8AA03200E /* OCMMacroState.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2C616352020C7D500503D22 /* userMepay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C616342020C7D400503D22 /* userMepay@2x.png */; };
 		C2E3FE571F0940F8005611F6 /* UIImageView+Letters.h in Headers */ = {isa = PBXBuildFile; fileRef = C2E3FE551F0940F8005611F6 /* UIImageView+Letters.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C2E3FE581F0940F8005611F6 /* UIImageView+Letters.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E3FE561F0940F8005611F6 /* UIImageView+Letters.m */; };
 		C2E3FE5A1F095227005611F6 /* VeeContactUITableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E3FE591F095227005611F6 /* VeeContactUITableViewCell.xib */; };
@@ -351,6 +352,7 @@
 		BDF7F7F3FC3A479B517C5C2578DA4D9F /* OCMArg.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMArg.m; path = Source/OCMock/OCMArg.m; sourceTree = "<group>"; };
 		BFAA0C8AB969038AE895FB833FD239F9 /* Pods-VeeContactPicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-VeeContactPicker_Tests-dummy.m"; sourceTree = "<group>"; };
 		C12973F8466CFBB121438E55ED99775B /* VeeCommons.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = VeeCommons.m; sourceTree = "<group>"; };
+		C2C616342020C7D400503D22 /* userMepay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "userMepay@2x.png"; sourceTree = "<group>"; };
 		C2E3FE551F0940F8005611F6 /* UIImageView+Letters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Letters.h"; sourceTree = "<group>"; };
 		C2E3FE561F0940F8005611F6 /* UIImageView+Letters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Letters.m"; sourceTree = "<group>"; };
 		C2E3FE591F095227005611F6 /* VeeContactUITableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VeeContactUITableViewCell.xib; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 			children = (
 				5F56BA5DD3A764B40BC6760FD74B1234 /* Radio_Deselected@2x.png */,
 				A4AC2040D04EAEB096E53E5E04C790A1 /* Radio_Selected@2x.png */,
+				C2C616342020C7D400503D22 /* userMepay@2x.png */,
 				8A0BC028D97456C56029416680FE06F6 /* VeeContactPickerViewController.xib */,
 				C2E3FE591F095227005611F6 /* VeeContactUITableViewCell.xib */,
 			);
@@ -1169,6 +1172,7 @@
 				B688AA135D31035288CB475345912DDC /* Radio_Selected@2x.png in Resources */,
 				92E9EE50CD28212DF6D3525C71AF6DDC /* VeeContactPickerViewController.xib in Resources */,
 				C2E3FE5A1F095227005611F6 /* VeeContactUITableViewCell.xib in Resources */,
+				C2C616352020C7D500503D22 /* userMepay@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
