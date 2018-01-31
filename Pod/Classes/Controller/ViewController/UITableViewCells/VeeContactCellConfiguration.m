@@ -75,12 +75,15 @@
 //        }
         NSString * contactName = @"";
         //--Set beneficiary image with initials  (if image not available)
-        if ([veeContact displayName].length > 0)
+        if ([veeContact displayName].length > 0) {
             contactName = [NSString stringWithFormat:@"%@",[veeContact displayName]];
-        else
-            contactName = @"?";
+            [veeContactUITableViewCell.contactImageView setImageWithString:contactName color:[UIColor colorWithRed:102/255.0 green:122/255.0 blue:148/255.0 alpha:1] circular:YES];
+        }
+        else {
+           [veeContactUITableViewCell.contactImageView setImage:[UIImage imageNamed:@"userMepay"]];
+        }
         
-        [veeContactUITableViewCell.contactImageView setImageWithString:contactName color:[UIColor colorWithRed:91/255.0 green:155/255.0 blue:213/255.0 alpha:1] circular:YES];
+        
         
     }
 }

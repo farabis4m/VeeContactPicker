@@ -68,7 +68,7 @@
         //--Set beneficiary image with initials  (if image not available)
         if ([_contact displayName].length > 0) {
             contactName = [NSString stringWithFormat:@"%@",[_contact displayName]];
-        	 [_contactImageView setImageWithString:contactName color:[UIColor colorWithRed:102/255.0 green:122/255.0 blue:122/255.0 alpha:1] circular:YES];
+        	 [_contactImageView setImageWithString:contactName color:[UIColor colorWithRed:102/255.0 green:122/255.0 blue:148/255.0 alpha:1] circular:YES];
         }
         else
         	[_contactImageView setImage:[UIImage imageNamed:@"userMepay"]];
